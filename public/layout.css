@@ -17,13 +17,13 @@ body{
 #left{width: 30% ; float: left; background-color: whitesmoke}
 #right{width: 70% ; float: right; background-color: rosybrown }
 
-#boxTitle { border: solid 1px black; padding: 5px; text-align: center; font-weight: bold; background-color: sandybrown}
-#boxContent{border:  solid 1px black; border-top : none; padding:  5px; text-align: center}
-#boxContentonline{border:  solid 1px black; border-top : none; padding:  5px; text-align: center}
+#boxTitle { border: solid 1px black; padding: 4px; text-align: center; font-weight: bold; background-color: sandybrown}
+#boxContent{border:  solid 1px black; border-top : none; padding:  5px; text-align: center; height: 150px;overflow:auto;}
+#boxContentonline{border:  solid 1px black; border-top : none; padding:  5px; text-align: center; height: 150px;overflow:auto;}
 
 #sayHi{text-align: right}
 
-#listMessage{height:  200px; background-color: pink ; margin-bottom: 15px;
+#listMessage{height:  300px; background-color: pink ; margin-bottom: 15px;
 
 border:1px #999999 solid;
 padding: 5px 5px 5px 5px;/* canh chinh noi dung va le the div*/
@@ -49,3 +49,4 @@ overflow:auto; /* thuoc tinh nay lam xuat hien thanh cuon*/
 
 
 
+::-webkit-scrollbar{height:13px;width:13px}::-webkit-scrollbar-track{-webkit-box-shadow:inset 2px 2px 3px #e0e0e0;background:#fff;border:0 solid #000}::-webkit-scrollbar-thumb{-webkit-box-shadow:inset 2px 2px 3px #00a5ff;background:#00a5ff}
