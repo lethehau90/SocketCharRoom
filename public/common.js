@@ -1,5 +1,7 @@
+/**
+ * Created by Hau Le on 5/22/17.
+ */
 var socketjs = {
-
     init: function () {
         socketjs.resgisterEvent();
         socketjs.loadForm()
