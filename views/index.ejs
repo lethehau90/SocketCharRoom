@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <title>Demo chart</title>
+    <script src="/assets/jquery.js"></script>
+    <script src="socket.io/socket.io.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/layout.css" />
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <div id="Heder">
+            <h1>Hau Le DEV Xin chào các bạn</h1>
+            <h3>Cùng chát với nhau, không cần đăng ký</h5>
+        </div>
+        <div id="loginRoom">
+            <div id="lgcol1">
+                <h3> Tên bạn là gì ?</h3>
+                <input type="text" id="txtUsername" />
+            </div>
+            <div id="lgcol2">
+                <h3>Tạo phòng chát</h3>
+                <input type="text" id="txtRoom" /> 
+            </div>
+            <div id="lgcol3">
+                <h3>Mật khẩu phòng chát</h3>
+                <input type="text" id="txtPass" /> 
+                <input type="button" value="Tạo phòng chát ngay" id="btnCreateRoom" />
+            </div>
+        </div>
+        <div id="chatRoom">
+            <div id="left">
+                <div id="boxTitle">Danh sách phòng</div>
+                <div id="boxContent">
+                    ...
+                </div>
+
+                <div id="boxTitle">Danh sách online</div>
+                <div id="boxContentonline">
+                    ...
+                </div>
+            </div>
+            <div id="right">
+                <div id="sayHi">
+                    Thành viên : <span id="currentUser">...</span>
+                   <==> Phòng :  <span id="currentRoom">...</span>
+                    <input type="button" id="btnLogout" value="logout" />
+                </div>
+
+                <div id="listMessage">
+
+                </div>
+
+                <input type="text" id="txtMessage" />
+                <input type="button" id="btnSendMessage" value="Send" />
+                <div id="info"></div>
+            </div>
+        </div>
+
+        <script src="/assets/common.js"></script>
+
+</body>
+
+</html>

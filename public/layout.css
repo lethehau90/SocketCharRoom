@@ -1,0 +1,51 @@
+body{
+    background-color:#ebeef4
+}
+
+#Heder{text-align: center}
+
+#wrapper {width:  600px ; margin:  auto}
+
+#chatRoom{
+    padding: 10 0 10 0
+}
+
+#txtRoom, #txtPass, #txtUsername{background-color:  transparent; border : solid black}
+
+#left, #right {min-height:  300px}
+
+#left{width: 30% ; float: left; background-color: whitesmoke}
+#right{width: 70% ; float: right; background-color: rosybrown }
+
+#boxTitle { border: solid 1px black; padding: 5px; text-align: center; font-weight: bold; background-color: sandybrown}
+#boxContent{border:  solid 1px black; border-top : none; padding:  5px; text-align: center}
+#boxContentonline{border:  solid 1px black; border-top : none; padding:  5px; text-align: center}
+
+#sayHi{text-align: right}
+
+#listMessage{height:  200px; background-color: pink ; margin-bottom: 15px;
+
+border:1px #999999 solid;
+padding: 5px 5px 5px 5px;/* canh chinh noi dung va le the div*/
+overflow:auto; /* thuoc tinh nay lam xuat hien thanh cuon*/
+}
+
+#txtMessage{background-color: transparent ; border:  solid 1px black; width: 85%; font-stretch: 14; font-family: inherit;}
+
+#info{
+    padding: 5px;
+}
+#currentRoom{
+    font-weight: 600
+}
+
+#loginRoom {width: 100%; padding-bottom: 20px}
+
+.ms{
+        display: block;
+    font-stretch: 12; font-family: inherit;padding: 5px 8px 6px 10px;
+    border-bottom-left-radius: 12px;    border-top-left-radius: 12px;background-color: #f1f0f0;
+}
+
+
+
