@@ -10,6 +10,8 @@ body{
     padding: 10 0 10 0
 }
 
+#currentUser , currentRoom {font-weight: 700;}
+
 #txtRoom, #txtPass, #txtUsername{background-color:  transparent; border : solid black}
 
 #left, #right {min-height:  300px}
