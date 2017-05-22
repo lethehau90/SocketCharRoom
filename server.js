@@ -123,11 +123,9 @@ io.on('connection', function (socket) {
 
 //Settings
 var port = process.env.PORT || 3000;
-
 app.get('/', function (req, res) {
     res.render('index')
 })
-
 server.listen(port, function () {
     console.log("Smart home API is listening on port: " + port);
 
