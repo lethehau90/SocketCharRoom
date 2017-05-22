@@ -18,17 +18,17 @@ var listRooms = []
 var listUsers = []
 
 
-io.on('connection', function(socket) {
+io.on('connection', function (socket) {
     console.log('người dùng đã kết nối vào ' + socket.id)
     //console.log(socket.adapter.rooms)
-    socket.on('disconnect', function() {
+    socket.on('disconnect', function () {
         console.log('người dùng đã hủy kết nối vào ' + socket.id)
 
         logout()
     })
 
     //create room
-    socket.on('create-room', function(data) {
+    socket.on('create-room', function (data) {
 
         var flag = true
         var validate = false
@@ -72,28 +72,31 @@ io.on('connection', function(socket) {
         }
     })
 
-    socket.on('user-chart', function(data) {
+    socket.on('user-chart', function (data) {
         var object = { userName: socket.userName, message: data }
         io.sockets.in(socket.room).emit('server-chat', object)
     })
 
-    socket.on('client-input-message', function() {
+    socket.on('client-input-message', function () {
         var s = socket.userName + " đang nhập văn bản"
         io.sockets.emit('server-input-message', s)
     })
-    socket.on('client-stop-input-message', function() {
+    socket.on('client-stop-input-message', function () {
         io.sockets.emit('server-stop-input-message')
     })
 
-    socket.on('logout', function() {
+    socket.on('logout', function () {
         logout()
     })
 
-    var logout = function() {
+    var logout = function () {
         var flag = true
-        listUsers.splice(
-            listUsers.indexOf(socket.userName), 1
-        );
+        for (var i = 0; i < listUsers.length; i++) {
+            if(listUsers[i] === socket.userName){
+                listUsers.splice(i, 1)
+            }
+        }
+      
         socket.broadcast.emit('server-send-users', listUsers)
 
         socket.leave(socket.room)
@@ -122,11 +125,11 @@ io.on('connection', function(socket) {
 //Settings
 var port = process.env.PORT || 3000;
 
-app.get('/', function(req, res) {
+app.get('/', function (req, res) {
     res.render('index')
 })
 
-server.listen(port, function() {
+server.listen(port, function () {
     console.log("Smart home API is listening on port: " + port);
 
 });
