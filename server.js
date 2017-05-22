@@ -98,7 +98,6 @@ io.on('connection', function (socket) {
         }
       
         socket.broadcast.emit('server-send-users', listUsers)
-
         socket.leave(socket.room)
 
         for (r in socket.adapter.rooms) {
