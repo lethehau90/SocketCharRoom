@@ -130,5 +130,4 @@ app.get('/', function (req, res) {
 })
 server.listen(port, function () {
     console.log("SocketIO is listening on port: " + port);
-
 });
