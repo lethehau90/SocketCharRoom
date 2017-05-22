@@ -97,7 +97,7 @@ io.on('connection', function (socket) {
             }
         }
       
-        socket.broadcast.emit('server-send-users', listUsers)
+        io.sockets.emit('server-send-users', listUsers)
         socket.leave(socket.room)
 
         for (r in socket.adapter.rooms) {
@@ -114,7 +114,7 @@ io.on('connection', function (socket) {
                         listRooms.splice(i, 1)
                     }
                 }
-                socket.broadcast.emit('server-send-rooms', listRooms)
+                io.sockets.emit('server-send-rooms', listRooms)
             }
         }
     }
