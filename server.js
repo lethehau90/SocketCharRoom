@@ -33,7 +33,6 @@ io.on('connection', function (socket) {
         var flag = true
         var validate = false
 
-        socket.join(data.room)
         socket.room = data.room
         socket.pass = data.pass
 
@@ -48,9 +47,6 @@ io.on('connection', function (socket) {
                 }
             }
         }
-        if (flag) {
-            listRooms.push({ room: socket.room, pass: socket.pass })
-        }
 
         if (listUsers.indexOf(socket.userName) >= 0) {
             socket.emit('server-send-register-faill', socket.userName)
@@ -62,6 +58,12 @@ io.on('connection', function (socket) {
                 socket.emit('server-send-pass-faill')
             }
             else {
+
+                socket.join(data.room)
+                if (flag) {
+                    listRooms.push({ room: socket.room, pass: socket.pass })
+                }
+
                 listUsers.push(socket.userName)
                 io.sockets.emit('server-send-rooms', listRooms)
                 io.sockets.emit('server-send-users', listUsers)
@@ -92,11 +94,11 @@ io.on('connection', function (socket) {
     var logout = function () {
         var flag = true
         for (var i = 0; i < listUsers.length; i++) {
-            if(listUsers[i] === socket.userName){
+            if (listUsers[i] === socket.userName) {
                 listUsers.splice(i, 1)
             }
         }
-      
+
         io.sockets.emit('server-send-users', listUsers)
         socket.leave(socket.room)
 

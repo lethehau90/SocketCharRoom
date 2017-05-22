@@ -10,8 +10,12 @@ var socketjs = {
     resgisterEvent: function () {
         var socket = io.connect('/')
 
+        socket.on('disconnect', function () {
+            $("#listMessage").html("")
+        })
+
         socket.on('server-send-rooms', function (data) {
-            
+
             $("#boxContent").html('')
             data.forEach(function (r) {
                 $("#boxContent").append("<div class='room'>" + r.room + "</div>")
@@ -60,7 +64,7 @@ var socketjs = {
 
         $('#btnCreateRoom').off('click').on('click', function () {
             if ($('#txtRoom').val() !== "" && $('#txtUsername').val() !== "" && $('#txtPass').val() !== "") {
-                var data = { userName: $('#txtUsername').val(), room: $('#txtRoom').val(), pass : $('#txtPass').val() }
+                var data = { userName: $('#txtUsername').val(), room: $('#txtRoom').val(), pass: $('#txtPass').val() }
                 socket.emit('create-room', data)
                 $('#txtRoom').val("")
                 $('#txtUsername').val("")
@@ -88,6 +92,7 @@ var socketjs = {
         $("#btnLogout").off('click').on('click', function () {
             socket.emit("logout")
             socketjs.hideForm()
+            $("#listMessage").html("")
         })
 
         $("#txtMessage").focusin(function () {
