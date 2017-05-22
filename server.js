@@ -127,6 +127,6 @@ app.get('/', function (req, res) {
     res.render('index')
 })
 server.listen(port, function () {
-    console.log("Smart home API is listening on port: " + port);
+    console.log("SocketIO is listening on port: " + port);
 
 });
